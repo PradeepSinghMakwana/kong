@@ -24,11 +24,11 @@ return {
     {
       input = { "cert" },
       on_write = function(cert)
-        local digest = to_hex(openssl_x509.new(cert):digest("sha256"))
+        local digest = openssl_x509.new(cert):digest("sha256")
         if not digest then
           return nil, "cannot create digest value of certificate"
         end
-        return { cert_digest = digest }
+        return { cert_digest = to_hex(digest) }
       end,
     },
   },
