@@ -2,6 +2,8 @@ local typedefs      = require "kong.db.schema.typedefs"
 local openssl_x509  = require "resty.openssl.x509"
 local str           = require "resty.string"
 
+local to_hex        = require("resty.string").to_hex
+
 return {
   name        = "ca_certificates",
   primary_key = { "id" },
@@ -18,7 +20,7 @@ return {
     {
       input = { "cert" },
       on_write = function(cert)
-        local digest = str.to_hex(openssl_x509.new(cert):digest("sha256"))
+        local digest = to_hex(openssl_x509.new(cert):digest("sha256"))
         if not digest then
           return nil, "cannot create digest value of certificate"
         end
