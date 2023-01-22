@@ -40,11 +40,7 @@ return {
         local cert = entity.cert
 
         local seen = find(cert, CERT_TAG, 1, true)
-        if not seen then
-          return nil, "please submit a correct certificate"
-        end
-
-        if find(cert, CERT_TAG, seen + CERT_TAG_LEN + 1, true) then
+        if seen and find(cert, CERT_TAG, seen + CERT_TAG_LEN + 1, true) then
           return nil, "please submit only one certificate at a time"
         end
 
