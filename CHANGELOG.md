@@ -80,6 +80,10 @@
   as little as possible. During that time, the invalid sessions could cause failures and partial downtime.
   All existing sessions are invalidated when upgrading to this version.
   [#10199](https://github.com/Kong/kong/pull/10199)
+- **http-log, statsd, opentelemetry, datadog**: The queueing system
+  has been reworked, causing a some plugin parameters to be
+  deprecated and new parameters to be added.
+  [#10172](https://github.com/Kong/kong/pull/10172)
 
 ### Additions
 
