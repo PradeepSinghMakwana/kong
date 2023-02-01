@@ -320,22 +320,28 @@ local compatible_checkers = {
         return nil
       end
 
+      local has_update
       for _, t in ipairs(config_services) do
         if t["protocol"] == "tls" then
-          if t["client_certificate"] or t["tls_verify"]
-              or t["tls_verify_depth"] or t["ca_certificates"] then
-            ngx_log(ngx_WARN, _log_prefix, "Kong Gateway v" .. KONG_VERSION ..
-                      " tls protocol service contains configuration 'service.client_certificate'",
-                      " or 'service.tls_verify' or 'service.tls_verify_depth' or 'service.ca_certificates'",
-                      " which is incompatible with dataplane version " .. dp_version .. " and will",
-                      " be removed.", log_suffix)
+          if t["client_certificate"] or t["tls_verify"] or
+             t["tls_verify_depth"]   or t["ca_certificates"] then
+
             t["client_certificate"] = nil
             t["tls_verify"] = nil
             t["tls_verify_depth"] = nil
             t["ca_certificates"] = nil
+
             has_update = true
           end
         end
+      end
+
+      if has_update then
+        ngx_log(ngx_WARN, _log_prefix, "Kong Gateway v" .. KONG_VERSION ..
+                  " tls protocol service contains configuration 'service.client_certificate'",
+                  " or 'service.tls_verify' or 'service.tls_verify_depth' or 'service.ca_certificates'",
+                  " which is incompatible with dataplane version " .. dp_version .. " and will",
+                  " be removed.", log_suffix)
       end
 
       return has_update
@@ -349,15 +355,19 @@ local compatible_checkers = {
         return nil
       end
 
+      local has_update
       for _, t in ipairs(config_upstreams) do
         if t["algorithm"] == "latency" then
-          ngx_log(ngx_WARN, _log_prefix, "Kong Gateway v" .. KONG_VERSION ..
-                  " configuration 'upstream.algorithm' contain 'latency' option",
-                  " which is incompatible with dataplane version " .. dp_version .. " and will",
-                  " be fall back to 'round-robin'.", log_suffix)
           t["algorithm"] = "round-robin"
           has_update = true
         end
+      end
+
+      if has_update then
+        ngx_log(ngx_WARN, _log_prefix, "Kong Gateway v" .. KONG_VERSION ..
+                " configuration 'upstream.algorithm' contain 'latency' option",
+                " which is incompatible with dataplane version " .. dp_version .. " and will",
+                " be fall back to 'round-robin'.", log_suffix)
       end
 
       return has_update
