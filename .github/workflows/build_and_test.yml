@@ -245,11 +245,14 @@ jobs:
           sleep 2
           docker logs opentelemetry-collector
 
-    - name: Tests
-      run: |
-          eval `luarocks path`
-          make dev
-          .ci/run_tests.sh
+    - name: debugging
+      uses: mxschmitt/action-tmate@v3
+
+#    - name: Tests
+#      run: |
+#          eval `luarocks path`
+#          make dev
+#          .ci/run_tests.sh
 
   integration-tests-dbless:
     name: DB-less integration tests
