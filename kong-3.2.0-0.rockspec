@@ -11,6 +11,7 @@ description = {
   homepage = "https://konghq.com",
   license = "Apache 2.0"
 }
+
 dependencies = {
   "inspect == 3.1.3",
   "luasec == 1.2.0",
