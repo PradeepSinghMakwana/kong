@@ -144,6 +144,7 @@ jobs:
 
     - name: Unit tests
       run: |
+          mkdir -p /tmp/cores
           eval `luarocks path`
           make dev
           bin/busted -v -o htest spec/01-unit
@@ -248,7 +249,7 @@ jobs:
 
     - name: Tests
       run: |
-          mkdir /tmp/cores
+          mkdir -p /tmp/cores
           eval `luarocks path`
           make dev
           .ci/run_tests.sh
@@ -316,6 +317,7 @@ jobs:
 
     - name: Tests
       run: |
+          mkdir -p /tmp/cores
           eval `luarocks path`
           make dev
           .ci/run_tests.sh
@@ -417,6 +419,7 @@ jobs:
 
     - name: Tests
       run: |
+          mkdir -p /tmp/cores
           eval `luarocks path`
           make dev
           .ci/run_tests.sh
@@ -460,6 +463,7 @@ jobs:
 
     - name: Tests
       run: |
+          mkdir -p /tmp/cores
           eval `luarocks path`
           make dev
 
