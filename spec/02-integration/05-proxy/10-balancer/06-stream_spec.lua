@@ -83,7 +83,7 @@ for _, strategy in helpers.each_strategy() do
         database = strategy,
         stream_listen = helpers.get_proxy_ip(false) .. ":19000," ..
                         helpers.get_proxy_ip(false) .. ":18000",
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         proxy_listen = "off",
         admin_listen = "off",
       })

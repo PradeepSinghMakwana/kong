@@ -7,7 +7,7 @@ describe("Proxy error handlers", function()
 
   lazy_setup(function()
     assert(helpers.start_kong {
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     })
   end)
 

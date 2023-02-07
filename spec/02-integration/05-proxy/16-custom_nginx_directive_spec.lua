@@ -12,7 +12,7 @@ describe("Custom NGINX directives", function()
       }
 
       config = config or {}
-      config.nginx_conf = "spec/fixtures/custom_nginx.template"
+      config.nginx_conf = "spec/fixtures/custom_nginx2.template"
 
       assert(helpers.start_kong(config))
     end

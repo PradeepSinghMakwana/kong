@@ -78,7 +78,7 @@ for _, strategy in helpers.each_strategy() do
         dns_resolver = "127.0.0.1",
         admin_listen = default_admin_listen,
         proxy_listen = default_proxy_listen,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         db_update_frequency = DB_UPDATE_FREQUENCY,
         db_update_propagation = DB_UPDATE_PROPAGATION,
       }, nil, nil, fixtures))
@@ -539,7 +539,7 @@ for _, strategy in helpers.each_strategy() do
         database   = strategy,
         admin_listen = default_admin_listen,
         proxy_listen = default_proxy_listen,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         client_ssl = true,
         client_ssl_cert = "spec/fixtures/kong_spec.crt",
         client_ssl_cert_key = "spec/fixtures/kong_spec.key",
@@ -651,7 +651,7 @@ for _, strategy in helpers.each_strategy() do
         dns_resolver = "127.0.0.1",
         admin_listen = default_admin_listen,
         proxy_listen = default_proxy_listen,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
         stream_listen = "off",
         db_update_frequency = DB_UPDATE_FREQUENCY,
@@ -1210,7 +1210,7 @@ for _, strategy in helpers.each_strategy() do
                 database = strategy,
                 admin_listen = default_admin_listen,
                 proxy_listen = default_proxy_listen,
-                nginx_conf = "spec/fixtures/custom_nginx.template",
+                nginx_conf = "spec/fixtures/custom_nginx2.template",
                 lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
                 db_update_frequency = 0.1,
                 stream_listen = "off",
@@ -1421,7 +1421,7 @@ for _, strategy in helpers.each_strategy() do
                   local requests = bu.SLOTS * 2 -- go round the balancer twice
                   local port1 = helpers.get_available_port()
                   local port2 = helpers.get_available_port()
-  
+
                   -- setup target servers:
                   -- server2 will only respond for part of the test,
                   -- then server1 will take over.
@@ -1430,7 +1430,7 @@ for _, strategy in helpers.each_strategy() do
                   local server2 = https_server.new(port2, "localhost", "http", true)
                   server1:start()
                   server2:start()
-  
+
                   -- configure healthchecks
                   bu.begin_testcase_setup(strategy, bp)
                   local upstream_name, upstream_id = bu.add_upstream(bp, {
@@ -1620,7 +1620,7 @@ for _, strategy in helpers.each_strategy() do
                   database = strategy,
                   admin_listen = default_admin_listen,
                   proxy_listen = default_proxy_listen,
-                  nginx_conf = "spec/fixtures/custom_nginx.template",
+                  nginx_conf = "spec/fixtures/custom_nginx2.template",
                   lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
                   db_update_frequency = 0.1,
                   stream_listen = "off",
@@ -1728,7 +1728,7 @@ for _, strategy in helpers.each_strategy() do
                   database = strategy,
                   admin_listen = default_admin_listen,
                   proxy_listen = default_proxy_listen,
-                  nginx_conf = "spec/fixtures/custom_nginx.template",
+                  nginx_conf = "spec/fixtures/custom_nginx2.template",
                   lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
                   db_update_frequency = 0.1,
                   stream_listen = "off",
@@ -1857,7 +1857,7 @@ for _, strategy in helpers.each_strategy() do
                 database   = strategy,
                 admin_listen = default_admin_listen,
                 proxy_listen = default_proxy_listen,
-                nginx_conf = "spec/fixtures/custom_nginx.template",
+                nginx_conf = "spec/fixtures/custom_nginx2.template",
                 lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
                 db_update_frequency = 0.1,
                 stream_listen = "off",
@@ -2188,7 +2188,7 @@ for _, strategy in helpers.each_strategy() do
         dns_resolver = "127.0.0.1",
         admin_listen = default_admin_listen,
         proxy_listen = default_proxy_listen,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         db_update_frequency = DB_UPDATE_FREQUENCY,
         db_update_propagation = DB_UPDATE_PROPAGATION,
       }, nil, nil, fixtures))
@@ -2426,7 +2426,7 @@ for _, strategy in helpers.each_strategy() do
           dns_resolver = "127.0.0.1",
           admin_listen = default_admin_listen,
           proxy_listen = default_proxy_listen,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
           db_update_frequency = DB_UPDATE_FREQUENCY,
           db_update_propagation = DB_UPDATE_PROPAGATION,
           stream_listen = "127.0.0.1:9100"

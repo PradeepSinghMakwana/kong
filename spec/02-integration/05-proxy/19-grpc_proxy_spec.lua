@@ -116,7 +116,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong({
         database = strategy,
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
       }, nil, nil, fixtures))
 
       proxy_client_grpc = helpers.proxy_client_grpc()

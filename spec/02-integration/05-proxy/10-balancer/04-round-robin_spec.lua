@@ -63,7 +63,7 @@ for _, consistency in ipairs(bu.consistencies) do
 
         assert(helpers.start_kong({
           database   = strategy,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
           db_update_frequency = 0.1,
           worker_consistency = consistency,
           worker_state_update_frequency = bu.CONSISTENCY_FREQ,
@@ -360,7 +360,7 @@ for _, consistency in ipairs(bu.consistencies) do
 
         assert(helpers.start_kong({
           database   = strategy,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
           db_update_frequency = 0.1,
           worker_consistency = consistency,
           worker_state_update_frequency = bu.CONSISTENCY_FREQ,

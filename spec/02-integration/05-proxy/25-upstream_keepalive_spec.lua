@@ -32,7 +32,7 @@ describe("#postgres upstream keepalive", function()
     local kopts = {
       log_level  = "debug",
       database   = "postgres",
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }
 
     for k, v in pairs(opts or {}) do

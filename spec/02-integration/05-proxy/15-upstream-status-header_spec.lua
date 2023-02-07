@@ -61,7 +61,7 @@ describe(constants.HEADERS.UPSTREAM_STATUS .. " header", function()
       setup_db()
 
       assert(helpers.start_kong {
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         headers = "server_tokens,latency_tokens,x-kong-upstream-status",
         plugins = "bundled,dummy",
       })
@@ -108,7 +108,7 @@ describe(constants.HEADERS.UPSTREAM_STATUS .. " header", function()
       setup_db()
 
       assert(helpers.start_kong {
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       })
     end)
 
@@ -149,7 +149,7 @@ describe(constants.HEADERS.UPSTREAM_STATUS .. " header", function()
       end
 
       assert(helpers.start_kong {
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         headers = "X-Kong-Upstream-Status",
         -- to see if the header is injected when response is buffered
         plugins = buffered and "bundled,response-phase,dummy,key-auth",
@@ -184,7 +184,7 @@ describe(constants.HEADERS.UPSTREAM_STATUS .. " header", function()
       setup_db()
 
       assert(helpers.start_kong {
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         headers = "X-Kong-Upstream-Status",
       })
     end)

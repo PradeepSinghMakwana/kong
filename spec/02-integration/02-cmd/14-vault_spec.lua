@@ -105,7 +105,7 @@ describe("kong vault", function()
 
         assert(helpers.start_kong({
           database   = strategy,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         admin_client = helpers.admin_client()

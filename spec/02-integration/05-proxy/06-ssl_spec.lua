@@ -206,7 +206,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong {
         database    = strategy,
-        nginx_conf  = "spec/fixtures/custom_nginx.template",
+        nginx_conf  = "spec/fixtures/custom_nginx2.template",
         trusted_ips = "127.0.0.1",
         nginx_http_proxy_ssl_verify = "on",
         nginx_http_proxy_ssl_trusted_certificate = "../spec/fixtures/kong_spec.crt",
@@ -374,7 +374,7 @@ for _, strategy in helpers.each_strategy() do
         lazy_setup(function()
           assert(helpers.restart_kong {
             database    = strategy,
-            nginx_conf  = "spec/fixtures/custom_nginx.template",
+            nginx_conf  = "spec/fixtures/custom_nginx2.template",
             trusted_ips = nil,
           })
 
@@ -398,7 +398,7 @@ for _, strategy in helpers.each_strategy() do
         lazy_setup(function()
           assert(helpers.restart_kong {
             database    = strategy,
-            nginx_conf  = "spec/fixtures/custom_nginx.template",
+            nginx_conf  = "spec/fixtures/custom_nginx2.template",
             trusted_ips = "127.0.0.1",
           })
 
@@ -438,7 +438,7 @@ for _, strategy in helpers.each_strategy() do
         lazy_setup(function()
           assert(helpers.restart_kong {
             database = strategy,
-            nginx_conf  = "spec/fixtures/custom_nginx.template",
+            nginx_conf  = "spec/fixtures/custom_nginx2.template",
             trusted_ips = "1.2.3.4", -- explicitly trust an IP that is not us
           })
 
@@ -466,7 +466,7 @@ for _, strategy in helpers.each_strategy() do
       before_each(function()
         assert(helpers.restart_kong {
           database = strategy,
-          nginx_conf  = "spec/fixtures/custom_nginx.template",
+          nginx_conf  = "spec/fixtures/custom_nginx2.template",
         })
 
         https_client_sni = helpers.proxy_ssl_client()
@@ -540,7 +540,7 @@ for _, strategy in helpers.each_strategy() do
         snis     = { "example.com" },
         service   = service,
       }
-      
+
       bp.routes:insert {
         protocols = { "tls" },
         snis      = { "foobar.example.com." },
@@ -564,7 +564,7 @@ for _, strategy in helpers.each_strategy() do
         stream_listen = "127.0.0.1:9020 ssl"
       })
 
-    
+
     end)
 
     lazy_teardown(function()
@@ -647,7 +647,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong {
         database    = strategy,
-        nginx_conf  = "spec/fixtures/custom_nginx.template",
+        nginx_conf  = "spec/fixtures/custom_nginx2.template",
       })
 
     end)

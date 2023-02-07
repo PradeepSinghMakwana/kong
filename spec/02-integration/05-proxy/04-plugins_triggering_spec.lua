@@ -223,7 +223,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
 
       proxy_client = helpers.proxy_client()
@@ -392,7 +392,7 @@ for _, strategy in helpers.each_strategy() do
 
         assert(helpers.start_kong {
           database = strategy,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         })
 
         proxy_client = helpers.proxy_client()
@@ -551,7 +551,7 @@ for _, strategy in helpers.each_strategy() do
 
         assert(helpers.start_kong {
           database          = strategy,
-          nginx_conf        = "spec/fixtures/custom_nginx.template",
+          nginx_conf        = "spec/fixtures/custom_nginx2.template",
           --anonymous_reports = true,
         })
 
@@ -736,7 +736,7 @@ for _, strategy in helpers.each_strategy() do
           proxy_listen_ssl = "127.0.0.1:9453",
           admin_listen_ssl = "127.0.0.1:9454",
           prefix = "servroot2",
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         })
       end)
 
@@ -1105,7 +1105,7 @@ for _, strategy in helpers.each_strategy() do
 
           assert(helpers.start_kong {
             database   = strategy,
-            nginx_conf = "spec/fixtures/custom_nginx.template",
+            nginx_conf = "spec/fixtures/custom_nginx2.template",
             plugins = "short-circuit,init-worker-lua-error",
           })
 
@@ -1175,7 +1175,7 @@ for _, strategy in helpers.each_strategy() do
 
             assert(helpers.start_kong {
               database   = strategy,
-              nginx_conf = "spec/fixtures/custom_nginx.template",
+              nginx_conf = "spec/fixtures/custom_nginx2.template",
             })
 
             proxy_client = helpers.proxy_client()
@@ -1271,7 +1271,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
     end)
 

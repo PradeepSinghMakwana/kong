@@ -95,7 +95,7 @@ describe("kong config", function()
     end)
 
     assert(helpers.start_kong({
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
       dns_hostsfile = dns_hostsfile,
       anonymous_reports = "on",
     }))
@@ -317,7 +317,7 @@ describe("kong config", function()
 
   it("#db config db_import catches errors in input", function()
     assert(helpers.start_kong({
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }))
 
     finally(function()
@@ -381,7 +381,7 @@ describe("kong config", function()
     ]])
 
     assert(helpers.start_kong({
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }))
 
     assert(helpers.kong_exec("config db_import " .. filename, {
@@ -471,7 +471,7 @@ describe("kong config", function()
     ]])
 
     assert(helpers.start_kong({
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }))
 
     assert(helpers.kong_exec("config db_import " .. filename, {
@@ -646,7 +646,7 @@ describe("kong config", function()
     ]])
 
     assert(helpers.start_kong({
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }))
 
     assert(helpers.kong_exec("config db_import " .. filename, {

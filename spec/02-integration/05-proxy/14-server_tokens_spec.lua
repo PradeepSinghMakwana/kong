@@ -53,7 +53,7 @@ describe("headers [#" .. strategy .. "]", function()
 
         config = config or {}
         config.database   = strategy
-        config.nginx_conf = "spec/fixtures/custom_nginx.template"
+        config.nginx_conf = "spec/fixtures/custom_nginx2.template"
 
         assert(helpers.start_kong(config))
       end
@@ -344,7 +344,7 @@ describe("headers [#" .. strategy .. "]", function()
 
         config = config or {}
         config.database   = strategy
-        config.nginx_conf = "spec/fixtures/custom_nginx.template"
+        config.nginx_conf = "spec/fixtures/custom_nginx2.template"
 
         assert(helpers.start_kong(config))
       end
@@ -843,7 +843,7 @@ describe("headers [#" .. strategy .. "]", function()
 
         config = config or {}
         config.database = strategy
-        config.nginx_conf = "spec/fixtures/custom_nginx.template"
+        config.nginx_conf = "spec/fixtures/custom_nginx2.template"
 
         assert(helpers.start_kong(config))
       end
@@ -915,7 +915,7 @@ describe("headers [#" .. strategy .. "]", function()
       return function()
         config = config or {}
         config.database   = strategy
-        config.nginx_conf = "spec/fixtures/custom_nginx.template"
+        config.nginx_conf = "spec/fixtures/custom_nginx2.template"
 
         assert(helpers.start_kong(config))
       end

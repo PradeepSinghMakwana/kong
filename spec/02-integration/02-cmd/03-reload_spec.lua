@@ -209,7 +209,7 @@ describe("kong reload #" .. strategy, function()
         database = "off",
         declarative_config = yaml_file,
         nginx_worker_processes = 1,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
 
       helpers.wait_until(function()
@@ -284,7 +284,7 @@ describe("kong reload #" .. strategy, function()
       assert(helpers.start_kong({
         database = "off",
         nginx_worker_processes = 1,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
 
       helpers.wait_until(function()
@@ -359,7 +359,7 @@ describe("kong reload #" .. strategy, function()
         database = "off",
         nginx_worker_processes = 1,
         declarative_config = yaml_file,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
 
       helpers.wait_until(function()
@@ -462,7 +462,7 @@ describe("kong reload #" .. strategy, function()
         database = "off",
         declarative_config = yaml_file,
         nginx_worker_processes = 1,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
 
       helpers.wait_until(function()
@@ -600,7 +600,7 @@ describe("key-auth plugin invalidation on dbless reload #off", function()
       database = "off",
       declarative_config = yaml_file,
       nginx_worker_processes = 1,
-      nginx_conf = "spec/fixtures/custom_nginx.template",
+      nginx_conf = "spec/fixtures/custom_nginx2.template",
     }))
 
     proxy_client = helpers.proxy_client()

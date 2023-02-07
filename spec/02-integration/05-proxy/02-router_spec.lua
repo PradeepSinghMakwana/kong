@@ -157,7 +157,7 @@ for _, strategy in helpers.each_strategy() do
         router_flavor = flavor,
         database = strategy,
         plugins = "bundled,enable-buffering",
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         stream_listen = string.format("127.0.0.1:%d ssl", stream_tls_listen_port),
         allow_debug_header = true,
       }, nil, nil, fixtures))
@@ -2278,7 +2278,7 @@ for _, strategy in helpers.each_strategy() do
           database = strategy,
           nginx_worker_processes = 4,
           plugins = "bundled,enable-buffering",
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
           allow_debug_header = true,
         }))
       end)
@@ -2420,7 +2420,7 @@ for _, strategy in helpers.each_strategy() do
         database = strategy,
         nginx_worker_processes = 4,
         plugins = "bundled,enable-buffering",
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
     end)
 

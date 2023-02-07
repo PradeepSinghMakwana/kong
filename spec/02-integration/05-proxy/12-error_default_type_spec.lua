@@ -54,7 +54,7 @@ for _, strategy in helpers.each_strategy() do
         assert(helpers.start_kong {
           database           = strategy,
           prefix             = helpers.test_conf.prefix,
-          nginx_conf         = "spec/fixtures/custom_nginx.template",
+          nginx_conf         = "spec/fixtures/custom_nginx2.template",
           error_default_type = "text/html",
         })
       end)
@@ -121,7 +121,7 @@ for _, strategy in helpers.each_strategy() do
         assert(helpers.start_kong {
           database           = strategy,
           prefix             = helpers.test_conf.prefix,
-          nginx_conf         = "spec/fixtures/custom_nginx.template",
+          nginx_conf         = "spec/fixtures/custom_nginx2.template",
         })
       end)
 

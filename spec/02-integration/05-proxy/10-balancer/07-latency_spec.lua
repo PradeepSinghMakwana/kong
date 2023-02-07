@@ -53,7 +53,7 @@ for _, strategy in helpers.each_strategy() do
 
       assert(helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
       }))
     end)
 
@@ -211,7 +211,7 @@ for _, strategy in helpers.each_strategy() do
 
         assert(helpers.start_kong({
           database   = strategy,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
       end)
 

@@ -217,7 +217,7 @@ describe("kong start/stop #" .. strategy, function()
   end)
 
   describe("custom --nginx-conf", function()
-    local templ_fixture = "spec/fixtures/custom_nginx.template"
+    local templ_fixture = "spec/fixtures/custom_nginx2.template"
 
     it("accept a custom Nginx configuration", function()
       assert(helpers.kong_exec("start --conf " .. helpers.test_conf_path .. " --nginx-conf " .. templ_fixture))
@@ -403,7 +403,7 @@ describe("kong start/stop #" .. strategy, function()
           database = "off",
           declarative_config = yaml_file,
           nginx_worker_processes = 100, -- stress test initialization
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         helpers.wait_until(function()
@@ -445,7 +445,7 @@ describe("kong start/stop #" .. strategy, function()
         assert(helpers.start_kong({
           database = "off",
           declarative_config_string = config_string,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         helpers.wait_until(function()
@@ -499,7 +499,7 @@ describe("kong start/stop #" .. strategy, function()
         assert(helpers.start_kong({
           database = "off",
           declarative_config = yaml_file,
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         helpers.wait_until(function()
@@ -546,7 +546,7 @@ describe("kong start/stop #" .. strategy, function()
         -- not specifying declarative_config this time
         assert(helpers.start_kong({
           database = "off",
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         helpers.wait_until(function()
@@ -664,7 +664,7 @@ describe("kong start/stop #" .. strategy, function()
       local pl_file   = require "pl.file"
       local fmt       = string.format
 
-      local templ_fixture     = "spec/fixtures/custom_nginx.template"
+      local templ_fixture     = "spec/fixtures/custom_nginx2.template"
       local new_templ_fixture = "spec/fixtures/custom_nginx.template.tmp"
 
       finally(function()

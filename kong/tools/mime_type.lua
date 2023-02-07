@@ -1,6 +1,6 @@
 local lpeg = require "lpeg"
 
-local unpack = unpack or table.unpack
+local unpack = table.unpack
 local P, S, R, C = lpeg.P, lpeg.S, lpeg.R, lpeg.C
 local ipairs = ipairs
 local lower = string.lower

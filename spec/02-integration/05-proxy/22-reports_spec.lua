@@ -174,7 +174,7 @@ for _, strategy in helpers.each_strategy() do
       })
 
       assert(helpers.start_kong({
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         database = strategy,
         dns_hostsfile = dns_hostsfile,
         anonymous_reports = true,

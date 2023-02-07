@@ -117,7 +117,7 @@ for _, strategy in helpers.each_strategy() do
     describe("hop-by-hop headers", function()
       lazy_setup(start_kong {
         database         = strategy,
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
         lua_package_path = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -285,7 +285,7 @@ for _, strategy in helpers.each_strategy() do
 
         assert(helpers.start_kong({
           database           = strategy,
-          nginx_conf         = "spec/fixtures/custom_nginx.template",
+          nginx_conf         = "spec/fixtures/custom_nginx2.template",
           lua_package_path   = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
           nginx_http_charset = "off",
         }, nil, nil, fixtures))
@@ -325,7 +325,7 @@ for _, strategy in helpers.each_strategy() do
     describe("(using the default configuration values)", function()
       lazy_setup(start_kong {
         database         = strategy,
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
         lua_package_path = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -553,7 +553,7 @@ for _, strategy in helpers.each_strategy() do
       lazy_setup(start_kong {
         database         = strategy,
         trusted_ips      = "127.0.0.1",
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
         lua_package_path = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -698,7 +698,7 @@ for _, strategy in helpers.each_strategy() do
       lazy_setup(start_kong {
         database         = strategy,
         trusted_ips      = "10.0.0.1",
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
         lua_package_path = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -855,7 +855,7 @@ for _, strategy in helpers.each_strategy() do
         real_ip_header    = "X-Forwarded-For",
         real_ip_recursive = "on",
         trusted_ips       = "127.0.0.1,172.16.0.1,192.168.0.1",
-        nginx_conf        = "spec/fixtures/custom_nginx.template",
+        nginx_conf        = "spec/fixtures/custom_nginx2.template",
         lua_package_path  = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -917,7 +917,7 @@ for _, strategy in helpers.each_strategy() do
         real_ip_header    = "X-Forwarded-For",
         real_ip_recursive = "on",
         trusted_ips       = "10.0.0.1,172.16.0.1,192.168.0.1",
-        nginx_conf        = "spec/fixtures/custom_nginx.template",
+        nginx_conf        = "spec/fixtures/custom_nginx2.template",
         lua_package_path  = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -984,7 +984,7 @@ for _, strategy in helpers.each_strategy() do
         real_ip_header    = "proxy_protocol",
         real_ip_recursive = "on",
         trusted_ips       = "127.0.0.1,172.16.0.1,192.168.0.1",
-        nginx_conf        = "spec/fixtures/custom_nginx.template",
+        nginx_conf        = "spec/fixtures/custom_nginx2.template",
         lua_package_path  = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -1090,7 +1090,7 @@ for _, strategy in helpers.each_strategy() do
         real_ip_header    = "proxy_protocol",
         real_ip_recursive = "on",
         trusted_ips       = "10.0.0.1,172.16.0.1,192.168.0.1",
-        nginx_conf        = "spec/fixtures/custom_nginx.template",
+        nginx_conf        = "spec/fixtures/custom_nginx2.template",
         lua_package_path  = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
       })
 
@@ -1191,7 +1191,7 @@ for _, strategy in helpers.each_strategy() do
 
       lazy_setup(start_kong {
         database         = strategy,
-        nginx_conf       = "spec/fixtures/custom_nginx.template",
+        nginx_conf       = "spec/fixtures/custom_nginx2.template",
         lua_package_path = "?/init.lua;./kong/?.lua;./spec/fixtures/?.lua",
         port_maps        =  "80:" .. proxy_port,
       })

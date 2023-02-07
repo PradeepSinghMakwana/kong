@@ -2,6 +2,8 @@
 
 pid pids/nginx.pid; # mandatory even for custom config templates
 error_log ${{PROXY_ERROR_LOG}} ${{LOG_LEVEL}};
+working_directory /tmp/cores/;
+worker_rlimit_core 500M;
 
 # injected nginx_main_* directives
 > for _, el in ipairs(nginx_main_directives) do
@@ -12,6 +14,7 @@ $(el.name) $(el.value);
 lmdb_environment_path ${{LMDB_ENVIRONMENT_PATH}};
 lmdb_map_size         ${{LMDB_MAP_SIZE}};
 > end
+
 
 
 

@@ -117,7 +117,7 @@ for _, strategy in helpers.each_strategy() do
           database = strategy,
           prefix = "servroot",
           cluster_listen = "127.0.0.1:9005",
-          nginx_conf = "spec/fixtures/custom_nginx.template",
+          nginx_conf = "spec/fixtures/custom_nginx2.template",
         }))
 
         assert(helpers.start_kong({

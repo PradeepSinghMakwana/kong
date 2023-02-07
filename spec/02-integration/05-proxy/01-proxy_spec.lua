@@ -170,7 +170,7 @@ for _, strategy in helpers.each_strategy() do
                           helpers.get_proxy_ip(false) .. ":17000",
           port_maps     = "19000:18000",
           plugins       = "bundled,ctx-tests",
-          nginx_conf    = "spec/fixtures/custom_nginx.template",
+          nginx_conf    = "spec/fixtures/custom_nginx2.template",
           proxy_listen  = "off",
           admin_listen  = "off",
         }))

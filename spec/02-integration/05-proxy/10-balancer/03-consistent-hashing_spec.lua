@@ -23,7 +23,7 @@ for _, strategy in helpers.each_strategy() do
 
           assert(helpers.start_kong({
             database   = strategy,
-            nginx_conf = "spec/fixtures/custom_nginx.template",
+            nginx_conf = "spec/fixtures/custom_nginx2.template",
             plugins    = "post-function",
             db_update_frequency = 0.1,
           }, nil, nil, nil))

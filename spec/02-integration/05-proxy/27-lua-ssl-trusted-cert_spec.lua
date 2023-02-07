@@ -45,7 +45,7 @@ for _, strategy in helpers.each_strategy() do
     it("works with single entry", function()
       assert(helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         lua_ssl_trusted_certificate = "spec/fixtures/kong_spec.crt",
       }))
 
@@ -60,7 +60,7 @@ for _, strategy in helpers.each_strategy() do
     it("works with multiple entries", function()
       assert(helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         lua_ssl_trusted_certificate = "spec/fixtures/kong_clustering_ca.crt,spec/fixtures/kong_clustering.crt",
         ssl_cert = "spec/fixtures/kong_clustering.crt",
         ssl_cert_key = "spec/fixtures/kong_clustering.key",
@@ -77,7 +77,7 @@ for _, strategy in helpers.each_strategy() do
     postgres_only("works with SSL verification", function()
       local _, err = helpers.start_kong({
         database   = strategy,
-        nginx_conf = "spec/fixtures/custom_nginx.template",
+        nginx_conf = "spec/fixtures/custom_nginx2.template",
         lua_ssl_trusted_certificate = "spec/fixtures/kong_clustering_ca.crt,spec/fixtures/kong_clustering.crt",
         pg_ssl = "on",
         pg_ssl_verify = "on",
