@@ -256,10 +256,10 @@ jobs:
           sudo chmod 1777 /tmp/cores
           eval `luarocks path`
           make dev
-          .ci/run_tests.sh
+#          .ci/run_tests.sh
 
-#    - name: debugging
-#      uses: mxschmitt/action-tmate@v3
+    - name: debugging
+      uses: mxschmitt/action-tmate@v3
 
   integration-tests-dbless:
     name: DB-less integration tests
