@@ -4,6 +4,13 @@ build-packages:
   os: ubuntu-22.04
   package: deb
   check-manifest-file: ubuntu-22.04-amd64.txt
+# Amazon Linux
+- label: amazonlinux-2
+  os: ubuntu-22.04
+  image: amazonlinux:2
+  package: rpm
+  check-manifest-file: amazonlinux-2-amd64.txt
+
 
 build-images:
 - label: ubuntu
